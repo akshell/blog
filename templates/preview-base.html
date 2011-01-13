@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div id="preview"></div>
+  <script>
+    var previewDiv = document.getElementById('preview');
+    var textarea = document.getElementsByTagName('textarea')[0];
+    function preview() {
+      previewDiv.innerHTML = textarea.value;
+    }
+  </script>
+{% endblock %}

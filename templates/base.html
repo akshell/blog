@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+          "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <link rel="shortcut icon" href="http://alpha.akshell.com/_static/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="http://alpha.akshell.com/_static/main.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <div class="container">
+      <a href="http://alpha.akshell.com/">
+        <img class="logo" src="http://alpha.akshell.com/_static/logo.png">
+      </a>
+      <div class="content">
+        <div class="breadcrumbs">
+          <a href="http://alpha.akshell.com/">Akshell</a> ▸
+          {% block breadcrumbs %}
+            <a href="{% url 'index' %}">Blog</a> ▸
+            {% block section %}{% endblock %}
+          {% endblock %}
+        </div>
+        {% block content %}{% endblock %}
+      </div>
+      {% block sidebar %}{% endblock %}
+    </div>
+    <div class="footer">
+      <a href="http://blog.akshell.com/">Blog</a>&nbsp;
+      <a href="http://twitter.com/akshell_com">Twitter</a>&nbsp;
+      <a href="http://alpha.akshell.com/terms/">Terms of Service</a>&nbsp;
+      <a href="http://alpha.akshell.com/privacy/">Privacy Policy</a>&nbsp;
+      &copy; 2011 by Anton Korenyushkin    
+    </div>
+    {% block extra-body %}{% endblock %}
+  </body>
+</html>

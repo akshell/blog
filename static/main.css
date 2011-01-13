@@ -1,0 +1,34 @@
+h1 a, h1 a:visited {
+  text-decoration: none;
+  color: #54198a;
+}
+
+h1 a:hover {
+  color: #2100ee;
+}
+
+div.sidebar {
+  margin-top: 42px;
+}
+
+div.tail {
+  font-size: 12px;
+  margin-bottom: 42px;
+}
+
+a.comments {
+  display: block;
+  float: right;
+}
+
+div#preview {
+  margin-top: 42px;
+}
+
+cite {
+  font-family: Lucida Grande, Lucida Sans Unicode, Verdana, Arial, sans-serif;
+}
+
+pre {
+  margin-bottom: 16px;
+}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Post - Akshell Blog{% endblock %}
+
+{% block section %}
+  <a href="{% url 'post' post.slug %}">{{ post.title }}</a> ▸ Delete
+{% endblock %}
+
+{% block content %}
+  <h1>Delete Post</h1>
+  <p>Really delete post "{{ post.title }}"?</p>
+  <form method="post" action=".">
+    {% csrfToken %}
+    <input type="submit" value="Delete">
+  </form>
+{% endblock %}

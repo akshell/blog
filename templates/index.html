@@ -1,0 +1,29 @@
+{% extends 'main-base.html' %}
+
+{% block title %}Akshell Blog{% endblock %}
+
+{% block breadcrumbs %}Blog{% endblock %}
+
+{% block content %}
+  {% for post in posts %}
+    <h1><a href="{% url 'post' post.slug %}">{{ post.title }}</a></h1>
+    {{ post.text|safe }}
+    <div class="tail">
+      {{ post.date|toString:'D' }} by {{ post.author }}
+      <a class="comments" href="{% url 'post' post.slug %}#disqus_thread">View Comments</a>
+    </div>
+  {% endfor %}
+{% endblock %}
+
+{% block extra-body %}
+  <script type="text/javascript">
+    var disqus_shortname = 'akshell';
+
+    (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+  </script>
+{% endblock %}
