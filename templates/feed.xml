@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Akshell Blog</title>
+  <link rel="self" href="http://blog.akshell.com{% url 'feed' %}" />
+  <link href="http://blog.akshell.com/" />
+  <id>http://blog.akshell.com/</id>
+  <updated>{% now 's' %}Z</updated>
+  <author><name>Akshell</name></author>
+  {% for post in posts %}
+    <entry>
+      <title>{{ post.title }}</title>
+      <link type="text/html" href="http://blog.akshell.com{% url 'post' post.slug %}" />
+      <id>http://blog.akshell.com{% url 'post' post.slug %}</id>
+      <updated>{{ post.date|toString:'s' }}Z</updated>
+      <content type="html">{{ post.text }}</content>
+    </entry>
+  {% endfor %}
+</feed>

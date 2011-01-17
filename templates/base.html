@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="http://alpha.akshell.com/_static/main.css">
     <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
     <title>{% block title %}{% endblock %}</title>
+    {% block extra-head %}{% endblock %}
   </head>
   <body>
     <div class="container">

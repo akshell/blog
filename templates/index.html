@@ -2,6 +2,10 @@
 
 {% block title %}Akshell Blog{% endblock %}
 
+{% block extra-head %}
+  <link rel="alternate" type="application/atom+xml" href="{% url 'feed' %}">
+{% endblock %}
+
 {% block breadcrumbs %}Blog{% endblock %}
 
 {% block content %}
