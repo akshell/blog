@@ -86,7 +86,11 @@ var PostHandler = Handler.subclass(
 var FeedHandler = Handler.subclass(
   {
     get: function (request) {
-      return render('feed.xml', {posts: rv.Post.all().get({by: '-date'})});
+      return render(
+        'feed.xml',
+        {posts: rv.Post.all().get({by: '-date'})},
+        http.OK,
+        {'Content-Type': 'application/atom+xml'});
     }
   });
 
